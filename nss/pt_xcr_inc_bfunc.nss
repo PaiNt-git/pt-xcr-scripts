@@ -150,7 +150,7 @@ void ptObjArrayAddPossibleProps(object oObject, string sProp) {
     	SetLocalString(oObject, "_pt_prop." + IntToString(iPropLen) + ".prop", sProp);
     	iPropLen++
     	SetLocalInt(oObject, "_pt_prop.length", iPropLen)
-    }
+    };
 }
 
 //Getter length of arrays of oObject
