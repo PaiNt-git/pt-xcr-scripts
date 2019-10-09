@@ -139,7 +139,18 @@ void ptItemSettings_set(object oItem, struct stItemSettings stVal) {
 
 void ptObjArrayAddPossibleProps(object oObject, string sProp) {
     int iPropLen = GetLocalInt(oObject, "_pt_prop.length");
-    SetLocalString(oObject, "_pt_prop." + IntToString(iPropLen) + ".prop", sProp);
+    bool bHasProp = false;
+    int i;
+    for (i = 0; i < iPropLen; i++) {
+    	if(GetLocalString(oObject, "_pt_prop." + IntToString(iPropLen))!="") {
+    		bHasProp = true
+    	};
+    };
+    if(!bHasProp) {
+    	SetLocalString(oObject, "_pt_prop." + IntToString(iPropLen) + ".prop", sProp);
+    	iPropLen++
+    	SetLocalInt(oObject, "_pt_prop.length", iPropLen)
+    }
 }
 
 //Getter length of arrays of oObject
@@ -158,6 +169,7 @@ void ptObjArrayLen_set(string sNamespace, object oObject, string sKey, int iLen)
         int iCurLen = GetLocalInt(oObject, sNamespace + sKey + "." + "length");
         DeleteLocalInt(oObject, sNamespace + sKey + "." + "length");
         int iPropLen = GetLocalInt(oObject, "_pt_prop.length");
+
         int i;
         for (i = 0; i < iCurLen; i++) {
             DeleteLocalString(oObject, sNamespace + sKey + "." + IntToString(i));
@@ -167,16 +179,24 @@ void ptObjArrayLen_set(string sNamespace, object oObject, string sKey, int iLen)
             DeleteLocalLocation(oObject, sNamespace + sKey + "." + IntToString(i));
 
             int j;
-            for (j = 0; j < iCurLen; j++) {
-                string sProp = GetLocalString(oObject, "_pt_prop." + IntToString(iPropLen) + ".prop");
+            for (j = 0; j < iPropLen; j++) {
 
-                DeleteLocalString(oObject, sNamespace + sKey + "." + IntToString(i) + "." + sProp);
-                DeleteLocalInt(oObject, sNamespace + sKey + "." + IntToString(i) + "." + sProp);
-                DeleteLocalFloat(oObject, sNamespace + sKey + "." + IntToString(i) + "." + sProp);
-                DeleteLocalObject(oObject, sNamespace + sKey + "." + IntToString(i) + "." + sProp);
-                DeleteLocalLocation(oObject, sNamespace + sKey + "." + IntToString(i) + "." + sProp);
+				string sProp = GetLocalString(oObject, "_pt_prop." + IntToString(j) + ".prop");
+
+				DeleteLocalString(oObject, sNamespace + sKey + "." + IntToString(i) + "." + sProp);
+				DeleteLocalInt(oObject, sNamespace + sKey + "." + IntToString(i) + "." + sProp);
+				DeleteLocalFloat(oObject, sNamespace + sKey + "." + IntToString(i) + "." + sProp);
+				DeleteLocalObject(oObject, sNamespace + sKey + "." + IntToString(i) + "." + sProp);
+				DeleteLocalLocation(oObject, sNamespace + sKey + "." + IntToString(i) + "." + sProp);
+
             };
         };
+
+        for (j = 0; j < iPropLen; j++) {
+			DeleteLocalString(oObject, "_pt_prop." + IntToString(j) + ".prop");
+        };
+        DeleteLocalInt(oObject, "_pt_prop.length");
+
     };
 }
 
