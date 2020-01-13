@@ -164,9 +164,9 @@ int ptObjArrayLen(string sNamespace, object oObject, string sKey) {
 void ptObjArrayLen_set(string sNamespace, object oObject, string sKey, int iLen);
 
 void ptObjArrayLen_set(string sNamespace, object oObject, string sKey, int iLen) {
+    int iCurLen = GetLocalInt(oObject, sNamespace + sKey + "." + "length");
     SetLocalInt(oObject, sNamespace + sKey + "." + "length", iLen);
     if (iLen == 0) {
-        int iCurLen = GetLocalInt(oObject, sNamespace + sKey + "." + "length");
         DeleteLocalInt(oObject, sNamespace + sKey + "." + "length");
         int iPropLen = GetLocalInt(oObject, "_pt_prop.length");
 
