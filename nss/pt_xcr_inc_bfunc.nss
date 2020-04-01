@@ -210,11 +210,17 @@ string ptObjArrayString(string sNamespace, object oObject, int i = 0, string sPr
 
 //Setter for string vars of oObject,
 // if sProp is set - then this Setter set that property value (but array-length is parent)
+// if i = -1 (default) - then func append ellement to array
+// if i = -2 - then func replace last element or property
 void ptObjArrayString_set(string sNamespace, object oObject, string sKey, string sVal, int i = -1, string sProp = "");
 
 void ptObjArrayString_set(string sNamespace, object oObject, string sKey, string sVal, int i = -1, string sProp = "") {
     if (i == -1) {
         i = ptObjArrayLen(sNamespace, oObject, sKey);
+    }
+    else if (i == -2) {
+    	i = ptObjArrayLen(sNamespace, oObject, sKey)-1;
+    	i = (i == -1) ? 0 : i
     };
 
     SetLocalString(oObject, sNamespace + sKey + "." + IntToString(i) + (sProp == "" ? "" : ("." + sProp)), sVal);
@@ -235,11 +241,17 @@ int ptObjArrayInt(string sNamespace, object oObject, int i = 0, string sProp = "
 
 //Setter for int vars of oObject,
 // if sProp is set - then this Setter set that property value (but array-length is parent)
+// if i = -1 (default) - then func append ellement to array
+// if i = -2 - then func replace last element or property
 void ptObjArrayInt_set(string sNamespace, object oObject, string sKey, int iVal, int i = -1, string sProp = "");
 
 void ptObjArrayInt_set(string sNamespace, object oObject, string sKey, int iVal, int i = -1, string sProp = "") {
     if (i == -1) {
         i = ptObjArrayLen(sNamespace, oObject, sKey);
+    }
+    else if (i == -2) {
+    	i = ptObjArrayLen(sNamespace, oObject, sKey)-1;
+    	i = (i == -1) ? 0 : i
     };
 
     SetLocalInt(oObject, sNamespace + sKey + "." + IntToString(i) + (sProp == "" ? "" : ("." + sProp)), iVal);
@@ -260,11 +272,17 @@ float ptObjArrayFloat(string sNamespace, object oObject, int i = 0, string sProp
 
 //Setter for float vars of oObject,
 // if sProp is set - then this Setter set that property value (but array-length is parent)
+// if i = -1 (default) - then func append ellement to array
+// if i = -2 - then func replace last element or property
 void ptObjArrayFloat_set(string sNamespace, object oObject, string sKey, float fVal, int i = -1, string sProp = "");
 
 void ptObjArrayFloat_set(string sNamespace, object oObject, string sKey, float fVal, int i = -1, string sProp = "") {
     if (i == -1) {
         i = ptObjArrayLen(sNamespace, oObject, sKey);
+    }
+    else if (i == -2) {
+    	i = ptObjArrayLen(sNamespace, oObject, sKey)-1;
+    	i = (i == -1) ? 0 : i
     };
 
     SetLocalFloat(oObject, sNamespace + sKey + "." + IntToString(i) + (sProp == "" ? "" : ("." + sProp)), fVal);
@@ -285,11 +303,17 @@ object ptObjArrayObject(string sNamespace, object oObject, int i = 0, string sPr
 
 //Setter for object vars of oObject,
 // if sProp is set - then this Setter set that property value (but array-length is parent)
+// if i = -1 (default) - then func append ellement to array
+// if i = -2 - then func replace last element or property
 void ptObjArrayObject_set(string sNamespace, object oObject, string sKey, object oVal, int i = -1, string sProp = "");
 
 void ptObjArrayObject_set(string sNamespace, object oObject, string sKey, object oVal, int i = -1, string sProp = "") {
     if (i == -1) {
         i = ptObjArrayLen(sNamespace, oObject, sKey);
+    }
+    else if (i == -2) {
+    	i = ptObjArrayLen(sNamespace, oObject, sKey)-1;
+    	i = (i == -1) ? 0 : i
     };
 
     SetLocalObject(oObject, sNamespace + sKey + "." + IntToString(i) + (sProp == "" ? "" : ("." + sProp)), oVal);
@@ -310,11 +334,17 @@ location ptObjArrayLocation(string sNamespace, object oObject, int i = 0, string
 
 //Setter for location vars of oObject,
 // if sProp is set - then this Setter set that property value (but array-length is parent)
+// if i = -1 (default) - then func append ellement to array
+// if i = -2 - then func replace last element or property
 void ptObjArrayLocation_set(string sNamespace, object oObject, string sKey, location lVal, int i = -1, string sProp = "");
 
 void ptObjArrayLocation_set(string sNamespace, object oObject, string sKey, location lVal, int i = -1, string sProp = "") {
     if (i == -1) {
         i = ptObjArrayLen(sNamespace, oObject, sKey);
+    }
+    else if (i == -2) {
+    	i = ptObjArrayLen(sNamespace, oObject, sKey)-1;
+    	i = (i == -1) ? 0 : i
     };
 
     SetLocalLocation(oObject, sNamespace + sKey + "." + IntToString(i) + (sProp == "" ? "" : ("." + sProp)), lVal);
@@ -474,8 +504,8 @@ string ptGetStringReplace(string sHays, string sNeedl, string sRepl) {
 string ptRUSGetStringLowerCase(string sHays);
 
 string ptRUSGetStringLowerCase(string sHays) {
-    string sPatt = "ß×ÑÌÈÒÜÁÞÔÛÂÀÏÐÎËÄÆÝÉÖÓÊÅÍÃØÙÇÕÚ¨";
-    string sRepl = "ÿ÷ñìèòüáþôûâàïðîëäæýéöóêåíãøùçõú¸";
+    string sPatt = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¨";
+    string sRepl = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 
     int i;
     int iLen = GetStringLength(sPatt);
@@ -493,8 +523,8 @@ string ptRUSGetStringLowerCase(string sHays) {
 string ptRUSGetStringUpperCase(string sHays);
 
 string ptRUSGetStringUpperCase(string sHays) {
-    string sPatt = "ÿ÷ñìèòüáþôûâàïðîëäæýéöóêåíãøùçõú¸";
-    string sRepl = "ß×ÑÌÈÒÜÁÞÔÛÂÀÏÐÎËÄÆÝÉÖÓÊÅÍÃØÙÇÕÚ¨";
+    string sPatt = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+    string sRepl = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¨";
 
     int i;
     int iLen = GetStringLength(sPatt);

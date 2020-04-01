@@ -30,7 +30,6 @@ const string PT_XCR_SQL_TABLES_VARIMPORT = "pt_axcrf_varimport";
 const string PT_XCR_SQL_TABLES_BARRELS = "pt_axcrf_boxes";
 const string PT_XCR_SQL_TABLES_PC_VARS = "pt_axcrf_table";
 
-
 // Prefixes for dump craft-skill-variables of PC to base,
 // this names/types set to module for further move from PC to SQL/Persistent campaign store.
 // Change it if collisions..
@@ -53,10 +52,9 @@ const string PT_XCR_NAMESPACE_PRIVVARS_MLOAD = "_pt_xcr.priv.mload.";
 const string PT_XCR_NAMESPACE_PRIVVARS_MHB = "_pt_xcr.priv.mhb.";
 const string PT_XCR_NAMESPACE_PRIVVARS_MCHAT = "_pt_xcr.priv.mchat.";
 const string PT_XCR_NAMESPACE_PRIVVARS_MACT = "_pt_xcr.priv.mact.";
-const string PT_XCR_NAMESPACE_PRIVVARS_MREST = "_pt_xcr.priv.mact.";
+const string PT_XCR_NAMESPACE_PRIVVARS_MREST = "_pt_xcr.priv.mrest.";
 
 const string PT_XCR_NAMESPACE_OTHERS = "pt_xcr.others.";
-
 
 //---END BASE CONSTANTS
 
@@ -126,13 +124,11 @@ const string PT_XCR_TOOL_SETTINGS_NUMUSE = "pt_CRAFT_PROCESS_NUMUSE";
 
 //---END TOOL SETTINGS VARS
 
-
 //---START BARREL SETTINGS VARS
 
 const string PT_XCR_BARREL_TAG = "pt_craft_box";
 
 //---END BARREL SETTINGS VARS
-
 
 //---START PROGRESSBAR SETTINGS VARS
 
@@ -147,7 +143,6 @@ const string PT_XCR_PROGRESSBAR_SETTINGS_CUR = "pt_xcr.ProgressbarCur";
 
 const string PT_XCR_SCRIPT_EXECUTE_ACTIVATE = "pt_xcr_activ";
 const string PT_XCR_SCRIPT_MODULE_LOAD = "pt_xcr_modlod";
-
 
 //---END PROGRESSBAR SETTINGS VARS
 
@@ -237,8 +232,8 @@ const int PT_XCR_LANGTOK_DIAL_50 = 77950;
 
 // ------- language ---------
 
-const string PT_XCR_LANGTOK_DIAL_DESCRIPTION_NEXT_PAGE = "[след. страница]";
-const string PT_XCR_LANGTOK_DIAL_DESCRIPTION_PREV_PAGE = "[пред. страница]";
+const string PT_XCR_LANGTOK_DIAL_DESCRIPTION_NEXT_PAGE = "[---|>]";
+const string PT_XCR_LANGTOK_DIAL_DESCRIPTION_PREV_PAGE = "[<|---]";
 
 const string PT_XCR_LANGTOK_DIAL_DESCRIPTION_1 = "...";
 const string PT_XCR_LANGTOK_DIAL_DESCRIPTION_2 = "...";
@@ -295,22 +290,22 @@ const string PT_XCR_LANGTOK_DIAL_DESCRIPTION_48 = "...";
 const string PT_XCR_LANGTOK_DIAL_DESCRIPTION_49 = "...";
 const string PT_XCR_LANGTOK_DIAL_DESCRIPTION_50 = "...";
 
-const string PT_XCR_LANGWORD_DESCRIPTION_1 = "Подготавливается процесс..";
-const string PT_XCR_LANGWORD_DESCRIPTION_2 = "Вы не узнали ничего нового..";
-const string PT_XCR_LANGWORD_DESCRIPTION_3 = "Вам сложно узнать что-то новое из этого процесса..";
-const string PT_XCR_LANGWORD_DESCRIPTION_4 = "Вам нелегко узнать что-то новое из этого процесса..";
-const string PT_XCR_LANGWORD_DESCRIPTION_5 = "Ваш навык";
-const string PT_XCR_LANGWORD_DESCRIPTION_6 = "увеличился до";
-const string PT_XCR_LANGWORD_DESCRIPTION_7 = "Ваш запас сил";
-const string PT_XCR_LANGWORD_DESCRIPTION_8 = "Ваших навыков оказалось недостаточно для успешного проведения этого процесса..";
-const string PT_XCR_LANGWORD_DESCRIPTION_9 = "Печально, но по непонятным причинам процесс не удался..";
-const string PT_XCR_LANGWORD_DESCRIPTION_10 = "Вы нарушили условия процесса..";
+const string PT_XCR_LANGWORD_DESCRIPTION_1 = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ..";
+const string PT_XCR_LANGWORD_DESCRIPTION_2 = "пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ..";
+const string PT_XCR_LANGWORD_DESCRIPTION_3 = "пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ..";
+const string PT_XCR_LANGWORD_DESCRIPTION_4 = "пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ..";
+const string PT_XCR_LANGWORD_DESCRIPTION_5 = "пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ";
+const string PT_XCR_LANGWORD_DESCRIPTION_6 = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ";
+const string PT_XCR_LANGWORD_DESCRIPTION_7 = "пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ";
+const string PT_XCR_LANGWORD_DESCRIPTION_8 = "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ..";
+const string PT_XCR_LANGWORD_DESCRIPTION_9 = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ..";
+const string PT_XCR_LANGWORD_DESCRIPTION_10 = "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ..";
 
-const string PT_XCR_LANGWORD_DESCRIPTION_11 = "Вы совсем устали и не можете продолжать процесс пока не отдохнете..";
-const string PT_XCR_LANGWORD_DESCRIPTION_12 = "!!!\nЗапущено перекэширование крафт-объектов. \nДождитесь окончания..";
-const string PT_XCR_LANGWORD_DESCRIPTION_13 = "!!!\nЗапущено перекеширование крафт-объектов. \nОбработано всего: ";
-const string PT_XCR_LANGWORD_DESCRIPTION_14 = " контейнеров с ";
-const string PT_XCR_LANGWORD_DESCRIPTION_15 = " предметами крафта. \nДождитесь окончания..";
+const string PT_XCR_LANGWORD_DESCRIPTION_11 = "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ..";
+const string PT_XCR_LANGWORD_DESCRIPTION_12 = "!!!\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. \nпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ..";
+const string PT_XCR_LANGWORD_DESCRIPTION_13 = "!!!\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. \nпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ: ";
+const string PT_XCR_LANGWORD_DESCRIPTION_14 = " пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ ";
+const string PT_XCR_LANGWORD_DESCRIPTION_15 = " пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ. \nпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ..";
 const string PT_XCR_LANGWORD_DESCRIPTION_16 = "...";
 const string PT_XCR_LANGWORD_DESCRIPTION_17 = "...";
 const string PT_XCR_LANGWORD_DESCRIPTION_18 = "...";

@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
-encoding//nss/pt_frame001.nss=Windows-1251
+encoding//nss/pt_xcr_inc_bfunc.nss=UTF-8
+encoding//nss/pt_xcr_inc_const.nss=UTF-8
+encoding//nss/pt_xcr_inc_funcs.nss=UTF-8
 encoding/<project>=Windows-1251
